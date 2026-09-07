@@ -7662,7 +7662,7 @@ GameObject:
   - component: {fileID: 1227352536}
   m_Layer: 0
   m_Name: HermitPlayer
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7966,7 +7966,7 @@ MonoBehaviour:
   groundLayer:
     serializedVersion: 2
     m_Bits: 8
-  scripta: {fileID: 1227352536}
+  Deathscript: {fileID: 1227352536}
   Alivecheck: 0
 --- !u!95 &1227352534
 Animator:
@@ -8008,6 +8008,12 @@ MonoBehaviour:
   brain: {fileID: 485173742}
   eyeball: {fileID: 358979123}
   foot: {fileID: 1873006947}
+  Bone: 0
+  Hand: 0
+  Heart: 0
+  Brain: 0
+  Eyeball: 0
+  Foot: 0
 --- !u!114 &1227352536
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15755,7 +15761,7 @@ GameObject:
   - component: {fileID: 2072677921}
   m_Layer: 0
   m_Name: Depot
-  m_TagString: Untagged
+  m_TagString: Depot
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -15815,13 +15821,13 @@ Rigidbody2D:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2072677916}
   m_BodyType: 0
-  m_Simulated: 0
+  m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
   m_LinearDamping: 0
   m_AngularDamping: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 0
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -15915,6 +15921,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 21e6796f0a4f7ec458220c68242a2fe2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  BPScript: {fileID: 1227352535}
+  BoneCheck: 0
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

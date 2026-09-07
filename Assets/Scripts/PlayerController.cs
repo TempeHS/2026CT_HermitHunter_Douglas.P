@@ -24,7 +24,7 @@ public class PlayerController : MonoBehaviour
 
     private Death death;    
 
-    public Death scripta;
+    public Death Deathscript;
     public bool Alivecheck;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -53,7 +53,7 @@ public class PlayerController : MonoBehaviour
             death.Dead();
         }
 
-        Alivecheck = scripta.IsAlive;
+        Alivecheck = Deathscript.IsAlive;
         
     }
 

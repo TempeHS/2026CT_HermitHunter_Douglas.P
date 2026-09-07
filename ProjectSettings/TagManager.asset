@@ -10,6 +10,7 @@ TagManager:
   - brain
   - heart
   - hand
+  - Depot
   layers:
   - Default
   - TransparentFX
