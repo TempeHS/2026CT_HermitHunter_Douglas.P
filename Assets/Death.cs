@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Threading.Tasks;
+using UnityEngine.SceneManagement; 
 
 public class Death : MonoBehaviour
 {
@@ -13,6 +14,8 @@ public class Death : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     public async void Dead()
     {
+        //have code that stops player moving
+        
         //have code that does YOU DIED
         death.SetActive(true);
         //have code that freezes moement
@@ -24,10 +27,12 @@ public class Death : MonoBehaviour
         await Task.Delay(3000);
         Debug.Log("after one second");
         // have code that ends everything
-        Application.Quit();
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        /*Application.Quit();
         #if UNITY_EDITOR
         UnityEditor.EditorApplication.isPlaying = false;
         #endif
+        */
     }
 
     void Update()
