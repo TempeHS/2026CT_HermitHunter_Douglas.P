@@ -16366,7 +16366,6 @@ MonoBehaviour:
   BoneValue: 0
   HandValue: 0
   HeartValue: 0
-  CollectedItems: []
 --- !u!50 &2072677922
 Rigidbody2D:
   serializedVersion: 5

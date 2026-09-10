@@ -24,9 +24,7 @@ public class Droppoff : MonoBehaviour
     public bool HandValue;
     public bool HeartValue;
 
-    public List<Droppoff> CollectedItems = new List<Droppoff>();
-
- 
+   
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -39,10 +37,10 @@ public class Droppoff : MonoBehaviour
         brainCover.SetActive(false);
         eyeballCover.SetActive(false);
         footCover.SetActive(false);
+         var list = new List<bool[]>();
+         list.Add(new bool[] { BoneValue, HandValue, HeartValue });
     }
-
     
-
     private void OnTriggerEnter2D(Collider2D collision)
     {
         //on collide with player check what things it has
@@ -55,6 +53,10 @@ public class Droppoff : MonoBehaviour
             BrainCheck = BPScript.Brain;
             EyeballCheck = BPScript.Eyeball;
             FootCheck = BPScript.Foot;
+
+            BoneValue = BoneCheck;
+            HandValue = HandCheck;
+            HeartValue = HeartCheck;
 
             Debug.Log("Player collided with the trigger!");
 
@@ -90,18 +92,18 @@ public class Droppoff : MonoBehaviour
             {
                 footCover.SetActive(true);
             }
+
+
             // if so DEBUG YOU WIN
 
-            var  someBools = new Droppoff { BoneValue = BoneCheck, HandValue = HandCheck, HeartValue = HeartCheck };
-            CollectedItems.Add(someBools);
 
-            bool allAreTrue = CollectedItems.All(b => b);
+            bool allAreTrue = list.All(b => b);
 
             if (allAreTrue)
             {
                 Debug.Log("All conditions met!");
             }
-            
+                      
         }
     }
 }
