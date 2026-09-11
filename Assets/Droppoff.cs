@@ -1,6 +1,7 @@
-using UnityEngine;
+using NUnit.Framework;
 using System.Collections.Generic;
 using System.Linq;
+using UnityEngine;
 
 public class Droppoff : MonoBehaviour
 {
@@ -24,7 +25,9 @@ public class Droppoff : MonoBehaviour
     public bool HandValue;
     public bool HeartValue;
 
-   
+    List<bool> mylist = new List<bool> {};
+    
+
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -36,9 +39,7 @@ public class Droppoff : MonoBehaviour
         heartCover.SetActive(false);
         brainCover.SetActive(false);
         eyeballCover.SetActive(false);
-        footCover.SetActive(false);
-         var list = new List<bool[]>();
-         list.Add(new bool[] { BoneValue, HandValue, HeartValue });
+        footCover.SetActive(false);  
     }
     
     private void OnTriggerEnter2D(Collider2D collision)
@@ -60,15 +61,19 @@ public class Droppoff : MonoBehaviour
 
             Debug.Log("Player collided with the trigger!");
 
-           /* Debug.Log(BoneCheck);
-            Debug.Log(HandCheck);
-            Debug.Log(HeartCheck);
-            Debug.Log(BrainCheck);
-            Debug.Log(EyeballCheck);
-            Debug.Log(FootCheck);   */
+            /* Debug.Log(BoneCheck);
+             Debug.Log(HandCheck);
+             Debug.Log(HeartCheck);
+             Debug.Log(BrainCheck);
+             Debug.Log(EyeballCheck);
+             Debug.Log(FootCheck);   */
+
+            mylist.Add(BoneValue);
+            mylist.Add(HandValue);
+            mylist.Add(HeartValue);
 
             // reveal smile for objects that have been found
-            if(BoneCheck == true)
+            if (BoneCheck == true)
             {
                 boneCover.SetActive(true);
             }
@@ -97,7 +102,7 @@ public class Droppoff : MonoBehaviour
             // if so DEBUG YOU WIN
 
 
-            bool allAreTrue = list.All(b => b);
+            bool allAreTrue = mylist.TrueForAll(x => x);
 
             if (allAreTrue)
             {
