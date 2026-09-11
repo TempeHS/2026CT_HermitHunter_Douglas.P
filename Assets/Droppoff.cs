@@ -24,6 +24,9 @@ public class Droppoff : MonoBehaviour
     public bool BoneValue;
     public bool HandValue;
     public bool HeartValue;
+    public bool BrainValue;
+    public bool EyeballValue;
+    public bool FootValue;
 
     List<bool> mylist = new List<bool> {};
     
@@ -58,6 +61,9 @@ public class Droppoff : MonoBehaviour
             BoneValue = BoneCheck;
             HandValue = HandCheck;
             HeartValue = HeartCheck;
+            BrainValue = BrainCheck;
+            EyeballValue = EyeballCheck;
+            FootValue = FootCheck;
 
             Debug.Log("Player collided with the trigger!");
 
@@ -71,6 +77,9 @@ public class Droppoff : MonoBehaviour
             mylist.Add(BoneValue);
             mylist.Add(HandValue);
             mylist.Add(HeartValue);
+            mylist.Add(BrainValue);
+            mylist.Add(EyeballValue);
+            mylist.Add(FootValue);
 
             // reveal smile for objects that have been found
             if (BoneCheck == true)
